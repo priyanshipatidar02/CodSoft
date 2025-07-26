@@ -1,0 +1,407 @@
+/* Reset & base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(to bottom, #2B303A, #1f1f24 60%);
+    color: #FFFFFF;
+    line-height: 1.6;
+}
+
+/* Navigation */
+header {
+    background: linear-gradient(90deg, #2B303A, #1f1f24);
+    padding: 1rem 2rem;
+    box-shadow: 0 0 10px rgba(0,0,0,0.7);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+nav a {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-weight: bold;
+    position: relative;
+}
+
+nav a::after {
+    content: '';
+    height: 2px;
+    width: 0;
+    background: linear-gradient(90deg, #FFFFFF, #B89E97);
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    transition: width 0.4s ease;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* Hero / Home section */
+#home {
+    text-align: center;
+    padding: 6rem 2rem;
+    animation: fadeIn 2s ease;
+    background: linear-gradient(135deg, #2B303A 0%, #B89E97 40%, #FFFFFF 100%);
+    color: #2B303A; 
+    border-bottom: 3px solid #B89E97;
+}
+
+#home h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+#home p {
+    font-size: 1.2rem;
+    color: #2B303A;
+}
+
+/* Section headings */
+#about h2,
+#skills h2,
+#projects h2,
+#certifications h2,
+#techstack h2 {
+    font-size: 2rem;
+    background: linear-gradient(90deg, #FFFFFF, #B89E97);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+/* About section */
+#about {
+    width: 100%;
+    background: linear-gradient(145deg, #2B303A, #1f1f24);
+    border-top: 3px solid;
+    border-bottom: 3px solid;
+    border-image: linear-gradient(to right, #FFFFFF, #B89E97) 1;
+    padding: 4rem 2rem;
+    animation: fadeInUp 1.5s ease;
+}
+
+.about-split {
+    display: flex;
+    max-width: 1200px;
+    margin: auto;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 1;
+}
+
+.about-text {
+    flex: 1 1 50%;
+    animation: slideLeft 1.5s ease;
+}
+
+.about-photo {
+    flex: 1 1 40%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    animation: slideRight 1.5s ease;
+    position: relative;
+    margin-top: -150px;
+    margin-bottom: -64px;
+}
+
+.about-photo img {
+    width: 400px;
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 0 8px rgba(255,255,255,0.6));
+    transition: transform 0.5s, filter 0.5s;
+}
+
+.about-photo img:hover {
+    transform: scale(1.05) rotate(2deg);
+    filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.8));
+}
+#resume {
+    text-align: center;
+    padding: 4rem 2rem;
+    animation: fadeInUp 1.5s ease;
+}
+
+#resume p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    color: #ddd;
+}
+#resume {
+    background: linear-gradient(160deg, #1f1f24, #2B303A);
+    border-top: 3px solid;
+    border-image: linear-gradient(to right, #FFFFFF, #B89E97) 1;
+    border-radius: 10px;
+}
+
+
+/* Shared section style (Skills, Projects, Certifications, Tech Stack) */
+#skills,
+#projects,
+#certifications,
+#techstack {
+    text-align: center;
+    padding: 4rem 2rem;
+    animation: fadeInUp 1.5s ease;
+}
+
+/* Grid boxes style */
+.skills-grid {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.skill-box {
+    background: linear-gradient(160deg, #1f1f24, #2B303A);
+    padding: 1.5rem;
+    border-radius: 15px;
+    width: 250px;
+    transition: transform 0.5s, box-shadow 0.5s;
+    border-top: 3px solid;
+    border-image: linear-gradient(to right, #FFFFFF, #B89E97) 1;
+    animation: bounceIn 1s ease;
+}
+
+.skill-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 20px #B89E97;
+}
+
+.skill-box h3 {
+    margin-bottom: 1rem;
+    color: #B89E97;
+}
+
+.skill-box ul {
+    list-style: none;
+    padding: 0;
+}
+
+.skill-box li {
+    margin-bottom: 0.5rem;
+}
+
+.skill-box p {
+    font-size: 0.95rem;
+    color: #ddd;
+}
+
+/* Projects section */
+#projects {
+    text-align: center;
+    padding: 4rem 2rem;
+    animation: fadeInUp 1.5s ease;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.project-card {
+    background: linear-gradient(160deg, #1f1f24, #2B303A);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    transition: transform 0.4s, box-shadow 0.4s;
+}
+.single-project-row {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.single-project-row .project-card {
+  width: 100%;
+  max-width: 500px; 
+}
+
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 20px #B89E97;
+}
+
+.project-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.project-content {
+    padding: 1rem;
+}
+
+.project-content h3 {
+    color: #B89E97;
+    margin-bottom: 0.5rem;
+}
+
+.project-content p {
+    font-size: 0.95rem;
+    color: #ddd;
+    margin-bottom: 1rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.4rem 0.8rem;
+    color: #2B303A;
+    background: linear-gradient(90deg, #FFFFFF, #B89E97);
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.4s;
+}
+
+.btn:hover {
+    background: linear-gradient(90deg, #B89E97, #FFFFFF);
+}
+
+/* Certifications section - creative badges */
+#certifications {
+    text-align: center;
+    padding: 4rem 2rem;
+    animation: fadeInUp 1.5s ease;
+}
+
+.certifications-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.cert-badge {
+    background: linear-gradient(160deg, #1f1f24, #2B303A);
+    border: 2px solid #B89E97;
+    border-radius: 10px;
+    padding: 1rem 1.5rem;
+    min-width: 200px;
+    transition: transform 0.4s, box-shadow 0.4s;
+}
+
+.cert-badge:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px #B89E97;
+}
+
+.cert-badge h3 {
+    color: #FFFFFF;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.cert-badge p {
+    color: #ccc;
+    font-size: 0.9rem;
+}
+
+
+/* Footer */
+footer {
+    background: linear-gradient(90deg, #2B303A, #1f1f24);
+    text-align: center;
+    padding: 1.5rem 2rem;
+    font-size: 0.9rem;
+    color: #ccc;
+    margin-top: 2rem;
+}
+
+footer a {
+    color: #B89E97;
+    text-decoration: none;
+}
+#scrollTopBtn {
+  display: none; 
+  position: fixed; 
+  bottom: 20px; 
+  right: 30px; 
+  z-index: 99; 
+  font-size: 18px; 
+  border: none; 
+  outline: none; 
+  background: #B89E97;
+  color: #2B303A;
+  cursor: pointer; 
+  padding: 10px 15px; 
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.4);
+  transition: background 0.3s;
+}
+
+#scrollTopBtn:hover {
+  background: #ffffff;
+}
+
+
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideLeft {
+    from { transform: translateX(-50px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideRight {
+    from { transform: translateX(50px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes fadeInUp {
+    from { transform: translateY(30px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes bounceIn {
+    0% { transform: scale(0.9); opacity: 0; }
+    60% { transform: scale(1.05); opacity: 1; }
+    100% { transform: scale(1); }
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+    .about-split {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+    .about-photo {
+        margin-top: -30px;
+    }
+    .about-photo img {
+        width: 280px;
+    }
+    .skill-box {
+        width: 100%;
+    }
+}
