@@ -396,7 +396,8 @@ footer a {
         text-align: center;
     }
     .about-photo {
-        margin-top: -30px;
+        margin-top: -50px;
+        margin-bottom: -20PX;
     }
     .about-photo img {
         width: 280px;
@@ -404,4 +405,16 @@ footer a {
     .skill-box {
         width: 100%;
     }
+  nav {
+    flex-wrap: wrap;         
+    justify-content: center;  
+    gap: 0.5rem;            
+  }
+
+  nav a {
+    flex: none;              
+    font-size: 0.85rem;       
+    padding: 0.4rem 0.6rem;   
+  }
 }
+
