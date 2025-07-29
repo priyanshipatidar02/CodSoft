@@ -38,7 +38,7 @@ It showcases:
 ---
 
 ## 🌐 Live Portfolio
-- 🔗 [Live Demo on Netlify](https://inspiring-daffodil-4cf819.netlify.app)
+- 🔗 [Live Demo on Netlify](https://sensational-gelato-55870c.netlify.app/)
 - 📂 [GitHub Repository](https://github.com/priyanshipatidar02/CodSoft/tree/main/Task-1)
 
 
