@@ -1,0 +1,407 @@
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  color: #1F2937;
+  background-color: #F9FAFB;
+  line-height: 1.6;
+}
+
+header {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: linear-gradient(135deg, #0D9488, #abbcbb);
+  color: white;
+  position: relative;
+}
+
+header h1 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+header p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+.corner-badge {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background: rgba(255, 255, 255, 0.15); 
+  color: white;
+  font-weight: bold;
+  padding: 0.3rem 0.8rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  backdrop-filter: blur(4px);
+  transition: transform 0.3s ease;
+}
+
+.corner-badge:hover {
+  transform: scale(1.1) rotate(-3deg);
+}
+
+
+.cta-buttons .btn {
+  display: inline-block;
+  margin: 0.5rem;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.btn.primary { background-color: #0D9488; }
+.btn.primary:hover { background-color: #0F766E; }
+.btn.secondary { background-color: #FBBF24; color: #1F2937; }
+.btn.secondary:hover { background-color: #F59E0B; color: #1F2937; }
+
+
+#darkModeToggle {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: white;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Hover effect: subtle color glow & scale */
+#darkModeToggle:hover {
+  transform: scale(1.3) rotate(10deg);
+  color: #000000; /* your accent color */
+}
+
+/* Animation keyframes for click */
+@keyframes spinScale {
+  0% { transform: rotate(0deg) scale(1); }
+  50% { transform: rotate(180deg) scale(1.4); }
+  100% { transform: rotate(360deg) scale(1); }
+}
+
+.features, .interactive, .testimonials {
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.features h2, .interactive h2, .testimonials h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+}
+
+.feature-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+.feature-card:hover { transform: translateY(-5px); }
+.feature-card i {
+  font-size: 2rem;
+  color: #0D9488;
+  margin-bottom: 0.5rem;
+}
+
+/* Timer section upgrade */
+#timerSection {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  max-width: 300px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#timerDisplay {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #0D9488;
+  margin-bottom: 1rem;
+}
+
+.timer-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.timer-buttons button {
+  flex: 1;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 6px;
+  background-color: #0D9488;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.timer-buttons button:hover {
+  background-color: #0F766E;
+  transform: translateY(-2px);
+}
+
+.timer-subtext {
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 1rem;
+}
+
+/* Dark mode adjustments for timer card */
+.dark-mode #timerSection {
+  background: #334155;
+  color: #F9FAFB;
+}
+.dark-mode #timerDisplay {
+  color: #FBBF24;
+}
+
+.testimonial {
+  max-width: 500px;
+  margin: 1rem auto;
+  font-style: italic;
+}
+
+footer {
+  text-align: center;
+  padding: 2rem;
+  background: linear-gradient(135deg, #0D9488, #abbcbb);
+  color: white;
+}
+
+footer .btn { margin-top: 1rem; }
+.footer-links {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+.footer-links a {
+  color: white;
+  text-decoration: none;
+  margin: 0 0.5rem;
+}
+.footer-links a:hover { text-decoration: underline; }
+
+/* Modal styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 10% auto;
+  padding: 2rem;
+  border: 1px solid #888;
+  width: 90%;
+  max-width: 400px;
+  border-radius: 12px;
+  position: relative;
+}
+
+.modal-content h2 {
+  margin-top: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+.modal-content form {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-content input {
+  padding: 0.7rem;
+  margin: 0.5rem 0;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 16px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #333;
+}
+
+.close-btn:hover {
+  color: #000;
+}
+
+/* Dark mode styles */
+.dark-mode {
+  background-color: #1F2937;
+  color: #F9FAFB;
+}
+.dark-mode header {
+  background: linear-gradient(135deg, #134E4A, #0D9488);
+}
+.dark-mode .feature-card {
+  background: #334155;
+  color: #F9FAFB;
+}
+.dark-mode .feature-card i {
+  color: #FBBF24;
+}
+.dark-mode footer {
+  background-color: #134E4A;
+}
+.dark-mode .btn.primary {
+  background: linear-gradient(135deg, #0D9488, #2DD4BF);
+  box-shadow: 0 4px 14px rgba(45,212,191,0.5);
+}
+.dark-mode .modal h2{
+    color: #000000;
+}
+.btn.primary {
+  background: linear-gradient(135deg, #0c776e, #2DD4BF); /* teal gradient */
+  color: white;
+  padding: 0.8rem 1.8rem;
+  border-radius: 9999px; /* fully rounded pill */
+  font-weight: bold;
+  text-decoration: none;
+  display: inline-block;
+  box-shadow: 0 4px 14px rgba(13,148,136,0.4);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.btn.primary:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(13,148,136,0.5);
+}
+
+.btn.primary:active {
+  transform: scale(0.97);
+}
+
+.testimonials {
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.testimonials h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #0D9488;
+}
+
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.testimonial-card {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+}
+
+.testimonial-card p {
+  font-style: italic;
+  margin-bottom: 1rem;
+  color: #1F2937;
+}
+
+.testimonial-card h4 {
+  font-weight: bold;
+  color: #0D9488;
+  margin: 0;
+}
+
+/* Dark mode adjustments */
+.dark-mode .testimonial-card {
+  background: #334155;
+  color: #F9FAFB;
+}
+
+.dark-mode .testimonial-card p {
+  color: #F9FAFB;
+}
+
+.dark-mode .testimonial-card h4 {
+  color: #FBBF24;
+}
+
+
+/* Small screens: phones */
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 2rem;
+  }
+
+  .hero-image {
+    max-width: 200px;
+    margin-top: 1rem;
+  }
+
+  .cta-buttons .btn {
+    display: block;
+    width: 80%;
+    margin: 0.5rem auto;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .modal-content {
+    width: 90%;
+    margin: 30% auto;
+  }
+
+  #timerDisplay {
+    font-size: 2rem;
+  }
+
+  #timerSection button {
+    width: 80%;
+  }
+}
+
+/* Tablets: medium screens */
+@media (max-width: 900px) {
+  header {
+    padding: 3rem 1rem;
+  }
+
+  .features, .interactive, .testimonials {
+    padding: 3rem 1rem;
+  }
+
+  .features-grid {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  }
+}
